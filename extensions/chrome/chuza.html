@@ -1,0 +1,55 @@
+<!--***************************************************************
+/
+/	Este programa se rige bajo la GNU General Public License v2
+/	El autor del mismo es Urko Joseba de Lucas Beaumont
+/	urko1982 [at] gmail [dot] com
+/	http://twitter.com/urko
+/
+/
+*****************************************************************/-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" media="screen" href="./chuzaPlugin.css"/> 
+		<script src="jquery.min.js"></script>
+		<script src="script.js"></script>
+		<script src="badge.js"></script>
+	</head>
+
+	<body>
+		
+		<script src="analytics.js"></script>
+		
+		<div style="float:left; width:510px;" class="header">
+
+			<div style="float:left; width:350px;">
+			
+				<div>
+					
+					<a style="float:left; margin-right:15px;" href="http://chuza.gl" class="logo"  target="_blank">Chuza!</a>
+					<a style="color:white;text-shadow:none;margin-right:24px;float:left" href="http://chuza.gl/submit.php"  target="_blank">enviar</a>
+					<a style="color:white;text-shadow:none;margin-right:24px;float:left" href="http://chuza.gl/shakeit.php"  target="_blank">pendentes</a>
+					<a style="color:white;text-shadow:none;margin-right:0px;float:left" href="http://chuza.gl/sneak.php"  target="_blank">fedello</a>
+					<a style="color:white;text-shadow:none;margin-right:35px;float:left" href="http://chuza.gl/chios/"  target="_blank">chios</a>
+					<!-- <a style="color:white;text-shadow:none;margin-right:25px;float:left" href="http://joneame.net/notitas/"  target="_blank">notitas</a> -->
+					<!-- <a style="color:white;text-shadow:none;margin-left:10px;float:left" href="http://joneame.net/encuestas.php"  target="_blank">encuestas</a> -->
+					
+				</div>
+				
+			</div>
+			
+			<div style="margin-top:-4px;float:right; width:150px; height:35px;">
+				<form action="http://chuza.gl/search.php" method="get" name="top_search" style="margin-top:10px"><input name="q" value="buscar..." type="text" onblur="if(this.value=='') this.value='buscar...';" onfocus="if(this.value=='buscar...') this.value='';"/>
+				</form>
+			</div>
+			
+		</div>
+	
+		<div style="float:left; margin:0px;">
+		
+			 <h1 style="margin-bottom:10px;" id="titular">Últimas Novas</h1> 
+			<div id="content"></div>
+		</div>
+	</body>
+</html>

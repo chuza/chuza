@@ -1,0 +1,127 @@
+<!--***************************************************************
+/
+/	Este programa se rige bajo la GNU General Public License v2
+/	El autor del mismo es Urko Joseba de Lucas Beaumont
+/	urko1982 [at] gmail [dot] com
+/	http://twitter.com/urko
+/
+/
+*****************************************************************/-->
+<html>
+
+	<head>
+		 <link rel="stylesheet" type="text/css" media="screen" href="./cssOptions.css"/> 
+	<!--	<link rel="stylesheet" type="text/css" media="screen" href="http://joneame.net/css/icons.css?1292795666"/> -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Opciones de la extension</title>
+	</head>
+	<script src="analytics.js"></script>
+	
+	<!-- Script para guardar los datos del joneante en localStorage -->
+	<script src="save_data.js"></script>
+		
+	<!-- Tomar plantilla de joneame.net -->
+	<body id="home"  onload="restore_options()">
+		<div id="wrap">
+			<div class="header">
+				<a href="http://chuza.gl" class="logo">Chuza</a>
+				<ul class="sections">
+					<li><a href="http://chuza.gl/submit.php">enviar</a></li>
+					<li><a href="http://chuza.gl/shakeit.php">pendentes</a></li>
+					<li><a href="http://chuza.gl/sneak.php">fedello</a></li>
+					<!-- <li><a href="http://joneame.net/corto.php">cortos</a></li> -->
+					<li><a href="http://chuza.gl/chios/">chios</a></li>
+					<!-- <li><a href="http://joneame.net/encuestas.php">encuestas</a></li> -->
+				</ul>
+				<ul class="user">
+					<li><a href="http://chuza.gl/equipa/index.php?page=o-novo-chuza">Axuda</a></li>
+				</ul>
+			</div>
+
+		<div id="singlewrap" style="margin-top:50px;">
+		
+			<h4>información persoal</h4>
+			<fieldset class="fondo-caja">
+				<div style="margin:30px 0 20px 460px;">RSS
+					<select name="rss" id="rss" style="margin-left:35px;">
+					    <option value="1" selected>Portada</option>
+					    <option value="2" >Pendentes</option>
+					</select>
+				</div>
+				<div style="margin-left:450px; margin-bottom:20px;">Chuza! <input id="user" type="text" value=""></div>
+				<div style="margin-left:460px; margin-bottom:20px;">API <input style="margin-left:20px" id="api" type="password" value=""></div>
+				<div style="margin-left:450px; margin-bottom:20px;">NSFW <input style="margin-left:63px" id="nsfw" type="checkbox" checked></div>
+				<div style="margin-left:450px; margin-bottom:20px;">+18 <input style="margin-left:79px" id="m18" type="checkbox" checked></div>
+				<div style="margin-left:450px; margin-bottom:20px;">Chuza 2.1 <input style="margin-left:79px" id="v21" type="checkbox" checked></div>
+				<br>	
+				<div style="margin-left:530px; margin-bottom:20px;"><button onclick="save_options()">Gardar</button></div>
+			</fieldset>
+			<div id="status"></div>
+
+		</div>
+
+		
+		<div id="footwrap">
+			<div class="footthingy">
+			<div id="footcol1">
+				<h5>suscripcións por RSS</h5>
+				<ul>
+					<li><a href="http://chuza.gl/rss2.php" rel="rss">Portada</a></li>
+					<li><a href="http://chuza.gl//rss2.php?status=queued" rel="rss">pendentes</a></li>
+					<li><a href="http://chuza.gl/comments_rss2.php" rel="rss">comentarios</a></li>
+		<!--			<li><a href="http://chuza.gl//encuestas_rss.php" rel="rss">encuestas</a></li> -->
+				</ul>
+			</div>
+			<div id="footcol2">
+				<h5>axuda</h5>
+				<ul id="halluda_hoygan">
+					<li><a href="http://chuza.gl/equipa/index.php?page=axuda">axuda</a></li>
+					<li><a href="http://chuza.gl/wiki/index.php/Preguntas_sobre_chuza!">faq</a></li>
+				</ul>
+			</div>
+			<div id="footcol3">
+				<h5>Chuza!</h5>
+				<ul id="joneamefooter">
+					<li><a href="http://twitter.com/chuza">en twitter</a></li>
+					<li><a href="http://chuza.gl/blog">blog</a></li>
+					<li><a href="http://chuza.gl/chios/">Chios</a></li>
+					<!-- <li><a href="http://joneame.net/top_mierdas.php">¿historias?</a></li> -->
+					<!-- <li><a href="http://joneame.net/encuestas.php">encuestas</a></li> -->
+				</ul>
+			</div>
+			<div id="footcol4">
+				<h5>estatísticas</h5>
+				<ul id="statisticslist"><li>
+					<a href="http://chuza.gl/topusers.php">top users </a></li>
+					<li><a href="http://chuza.gl/topstories.php">populares</a></li>
+					<li><a href="http://chuza.gl/topcommented.php">máis comentadas</a></li>
+					<li><a href="http://chuza.gl/topcomments.php">mellores comentarios</a></li>
+					<!-- <li><a href="http://joneame.net/mejores_notitas.php">mellores chios</a></li> -->
+					<li><a href="http://chuza.gl/sitescloud.phpp">nube de etiquetas</a></li>
+					<li><a href="http://chuza.gl/sitescloud.php">nube de sitios</a></li>
+				</ul>
+			</div>
+			<div id="footcol5">
+				<h5>mapas</h5>
+				<ul id="mapslist">
+					<li><a href="http://chuza.gl/geovision.php">geovisión</a></li>
+					<li><a href="http://chuza.gl/map.php">historias</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="gatete"></div>
+		<div class="footlegal">
+			<ul id="legalese">
+				<li>Chuza!</li>
+				<li> - </li>
+				<li><a href="http://joneame.net/ayuda.php?id=legal">condiciones legales</a> <a href="http://joneame.net/ayuda.php?id=uso">y de uso</a></li>
+				<li> - </li>
+				<li><a href="http://joneame.nethttp://joneame.net/COPYING">licencia</a>, <a href="http://websvn.joneame.net/listing.php?repname=Joneame+Public&amp;path=/trunk/v2/">descargar</a></li>
+				<li> - </li>
+				<li><a href="http://www.famfamfam.com/lab/icons/silk/">iconos silk</a></li>
+				<li> - </li><li><a href="http://joneame.net/ayuda.php?id=legal">contacto</a></li>
+				<li> - </li><li><a href="http://joneame.net/credits.php">créditos</a></li>
+			</ul> 
+		</div>
+	</body>
+</html>

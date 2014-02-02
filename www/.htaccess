@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^story/(.+)$ story.php/$1 [L,NS]
+RewriteRule ^c/(.+)$ comment.php/$1 [L,NS]
+RewriteRule ^user/(.+)$ user.php/$1 [L,NS]
+RewriteRule ^search/$ index.php?$1 [L,NS,NE,PT]
+RewriteRule ^search(/.*)$ index.php$1 [L,NS,NE,PT]
+RewriteRule ^notame$ sneakme/index.php?$1 [L,NS]
+RewriteRule ^notame(/.*)$ sneakme/index.php$1 [L,NS]
+RewriteRule ^chios$ sneakme/index.php?$1 [L,NS]
+RewriteRule ^chios(/.*)$ sneakme/index.php$1 [L,NS]
+
+redirect 301 m.test.chuza.gl http://test.chuza.gl
+
+#Re escribimo o dominio m.chuza.gl
+RewriteCond %{HTTP_HOST} ^m.chuza\.gl.*
+RewriteCond %{REQUEST_URI} !/mobile
+RewriteRule ^(.*)$ mobile/$1 [L]
+
+
+
+
+</IfModule>
+
+#RewriteEngine On
+RewriteCond %{HTTP_HOST} ^m.test.chuza.gl$ [NC]
+#RewriteRule ^(.*)$ http://test.chuza.gl/mobile$1 [R=301,L]

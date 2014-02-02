@@ -1,0 +1,27 @@
+{
+	"name": "Chuza Chrome Extension",
+	"version": "1.0.3.4",
+	"description": "Chuza Chrome Extension ofrece novas funcionalidades aos usuarios da rede social chuza.gl",
+	"icons":{
+		"128":"icon_128.png"
+	},
+	"permissions": [
+    	"tabs", 
+    	"http://*/*",
+    	"contextMenus"
+	],
+	"browser_action":	{
+		"default_icon": "avatar_19.png",
+		"default_title": "Chuza!",
+		"popup": "chuza.html"
+	},
+	"content_scripts": [
+    {
+      "matches": ["http://chuza.gl/*", "http://*.chuza.gl/*"],
+      "css": ["customize.css"],
+      "js": ["jquery-1.4.4.js", "customize.js"]
+    }
+  ],
+	"options_page": "options.html",
+	"background_page": "background.html"
+}
