@@ -96,6 +96,10 @@ do_mnu_categories_horizontal($_REQUEST['category']);
 
 /*** SIDEBAR ****/
 echo '<div id="sidebar">';
+
+do_cms_content("FRONT", "SIDEBAR");
+
+
 do_banner_right();
 do_banner_promotions();
 

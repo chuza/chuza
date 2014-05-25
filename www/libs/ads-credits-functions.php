@@ -46,6 +46,17 @@ function do_banner_top_mobile () {
 	}
 }
 
+function do_cms_content($section, $subsection) {
+       	global $db, $current_user, $globals;
+
+	if ($globals["CMS"]) {
+		if(($results = $db->get_results("SELECT * FROM cms WHERE (cms_section='$section' OR cms_section='ALL') and (cms_subsection='$subsection' OR cms_subsection='ALL') ORDER BY cms_order"))) {
+			foreach ($results as $result) {
+				echo $result->cms_content;
+			}
+		}
+	}
+}
 
 function do_banner_right() { // side banner A
 	global $globals, $current_user;
