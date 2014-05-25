@@ -67,8 +67,8 @@ if ($current_user->user_id > 0 && $link->status != 'published') {
 	}
 }
 
-if ($current_user->user_id > 0) $freq = 3;
-else $freq = 2;
+if ($current_user->user_id > 0) $freq = 15;
+else $freq = 5;
 
 if ($link->status == 'published')  $freq *= 2; // Allow to play a little more if published
 

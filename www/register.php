@@ -118,7 +118,7 @@ function do_register1() {
 
 	// fuck spammers
 	$re_test = Array();
-	preg_match("/.*(outlook.com)|(fr)|(co.uk)|(ru)|(ua)|(aol.com)|(.tk)|(hotmail.*)$/i", clean_input_string($_POST["email"]), $re_test);
+	preg_match("/.*(outlook.com)|(fr)|(co.uk)|(ru)|(ua)|(aol.com)|(.tk)$/i", clean_input_string($_POST["email"]), $re_test);
 
 	if($re_test || !empty($_POST['email2'])) {
 		register_error(_("Dominio nom permitido. Ponte em contato com nos em chuza.gl@gmail.com"));

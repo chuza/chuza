@@ -206,6 +206,7 @@ margin-left: 5px;
 text-indent: -9999px;
 display: block;
 float: left;
+background-size:contain;
 }
 
 #header ul#headtools{

@@ -15,7 +15,7 @@ $name=clean_input_string($_GET['name']);
 function check_spammer_email($name) {
 	// fuck spammers
 	$re_test = Array();
-	preg_match("/.*(outlook.com)|(fr)|(co.uk)|(ru)|(ua)|(aol.com)|(.tk)|(hotmail.*)$/i", $name, $re_test);
+	preg_match("/.*(outlook.com)|(fr)|(co.uk)|(ru)|(ua)|(aol.com)|(.tk)$/i", $name, $re_test);
 	if($re_test)
 		return true;
 }
