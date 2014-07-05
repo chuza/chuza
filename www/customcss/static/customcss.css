@@ -1,0 +1,33 @@
+div.newswrap {
+	min-height:800px;
+}
+
+div.estilosHeader {
+	float:right; width:200px;
+}
+
+div.userStyles {
+	width:240px;
+	list-style-type:none;
+}
+
+div.botomDereito {
+	float:right;
+}
+
+li.estilo {
+	width:220px;
+	margin:5px;
+       	padding:5px;
+       	border-radius:5px;
+       	background-color:#669933;
+}
+
+a.styleEdit {
+	cursor:pointer; color:white;
+}
+
+a.styleRemove {
+	cursor:pointer;
+	background-color:red;
+}
