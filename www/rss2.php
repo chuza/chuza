@@ -37,7 +37,7 @@ if(!empty($_REQUEST['time'])) {
 	$sql .= "link_date > FROM_UNIXTIME($from) AND ";
 	$sql .= "link_status = 'published' ORDER BY link_votes DESC LIMIT $rows";
 	$last_modified = time();
-	$title = _('Menéame').': '.sprintf(_('más votadas en %s'), txt_time_diff($from));
+	$title = _('Chuza').': '.sprintf(_('más votadas en %s'), txt_time_diff($from));
 } elseif (!empty($_REQUEST['favorites'])) {
 	/////
 	// RSS for users' favorites
@@ -46,7 +46,7 @@ if(!empty($_REQUEST['time'])) {
 	$sql = "SELECT link_id FROM links, favorites WHERE favorite_user_id=$user_id AND favorite_type='link' AND favorite_link_id=link_id ORDER BY favorite_date DESC limit $rows";
 	$last_modified = $db->get_var("SELECT UNIX_TIMESTAMP(max(favorite_date)) from favorites where favorite_user_id=$user_id AND favorite_type='link'");
 	$user_login = $db->get_var("select user_login from users where user_id=$user_id");
-	$title = _('Menéame').': '.sprintf(_('favoritas de %s'), $user_login);
+	$title = _('Chuza').': '.sprintf(_('favoritas de %s'), $user_login);
 	$globals['redirect_feedburner'] = false;
 } elseif (!empty($_REQUEST['voted_by'])) {
 	// RSS for voted links
@@ -207,13 +207,13 @@ if ($links) {
 		echo "	<item>\n";
 
 		// Meneame own namespace
-		echo "		<meneame:link_id>$link->id</meneame:link_id>\n";
-		echo "		<meneame:user>$link->username</meneame:user>\n";
-		echo "		<meneame:votes>".intval($link->votes+$link->anonymous)."</meneame:votes>\n";
-		echo "		<meneame:negatives>$link->negatives</meneame:negatives>\n";
-		echo "		<meneame:karma>".intval($link->karma)."</meneame:karma>\n";
-		echo "		<meneame:comments>$link->comments</meneame:comments>\n";
-		echo "		<meneame:url>".htmlspecialchars($link->url)."</meneame:url>\n";
+		echo "		<chuza:link_id>$link->id</chuza:link_id>\n";
+		echo "		<chuza:user>$link->username</chuza:user>\n";
+		echo "		<chuza:votes>".intval($link->votes+$link->anonymous)."</chuza:votes>\n";
+		echo "		<chuza:negatives>$link->negatives</chuza:negatives>\n";
+		echo "		<chuza:karma>".intval($link->karma)."</chuza:karma>\n";
+		echo "		<chuza:comments>$link->comments</chuza:comments>\n";
+		echo "		<chuza:url>".htmlspecialchars($link->url)."</chuza:url>\n";
 
 		// Title must not carry htmlentities
 		echo "		<title>".htmlentities2unicodeentities($link->title)."</title>\n";
@@ -291,7 +291,7 @@ function do_header($title) {
 	echo '	xmlns:dc="http://purl.org/dc/elements/1.1/"'."\n";
 	echo '	xmlns:georss="http://www.georss.org/georss"'."\n";
 	echo '	xmlns:media="http://search.yahoo.com/mrss/"'."\n";
-	echo '	xmlns:meneame="http://meneame.net/faq-es.php"'."\n";
+	echo '	xmlns:chuza="http://chuza.gal/equipa/index.php?page=axuda"'."\n";
 	echo ' >'. "\n";
 	echo '<channel>'."\n";
 	echo'	<title>'.$title.'</title>'."\n";
@@ -300,7 +300,7 @@ function do_header($title) {
 	echo"	<image><title>$title</title><link>http://".get_server_name().$home."</link><url>http://".get_static_server_name().$globals['base_url']."img/mnm/eli-rss.png</url></image>\n";
 	echo'	<description>'._('Sitio colaborativo de publicación y comunicación entre blogs').'</description>'."\n";
 	echo'	<pubDate>'.date("r", $last_modified).'</pubDate>'."\n";
-	echo'	<generator>http://blog.meneame.net/</generator>'."\n";
+	echo'	<generator> http://chuza.gal/blog/</generator>'."\n";
 	echo'	<language>'.$dblang.'</language>'."\n";
 	if ($globals['pubsub'] && $globals['main_published_rss']) {
 		echo '	<atom:link rel="hub" href="'.$globals['pubsub'].'"/>'."\n";
