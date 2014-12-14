@@ -137,16 +137,21 @@ function do_header($title, $id='home') {
 
         $redis = new Predis_Client();
 
-	if ($redis) {
-		$r = $redis->zrevrangebyscore($globals['enviroment'].'ips', $check_ip, '0', 'WITHSCORES', 'LIMIT', '0','1');
-		preg_match('/(^[^-]*)/', $r[0], $matches);
+	try {
+		if ($redis) {
+			$r = $redis->zrevrangebyscore($globals['enviroment'].'ips', $check_ip, '0', 'WITHSCORES', 'LIMIT', '0','1');
+			preg_match('/(^[^-]*)/', $r[0], $matches);
 
-		if (in_array($matches[0], $globals['lusophonia'])) {
-		    $stdRow = 1;
-		} else {
-		    if (!$_COOKIE['chuza_current_standard']) $_COOKIE['chuza_current_standard'] = 1;
-		    $stdRow = $globals['standards'][$_COOKIE['chuza_current_standard']];
+			if (in_array($matches[0], $globals['lusophonia'])) {
+			    $stdRow = 1;
+			} else {
+			    if (!$_COOKIE['chuza_current_standard']) $_COOKIE['chuza_current_standard'] = 1;
+			    $stdRow = $globals['standards'][$_COOKIE['chuza_current_standard']];
+			}
 		}
+	} catch (Exception $e) {
+		// do nothing at the moment
+		// failure should be handled using unit tests
 	}
     }
 

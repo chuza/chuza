@@ -10,6 +10,7 @@ include('config.php');
 include(mnminclude.'html1.php');
 include(mnminclude.'tags.php');
 include(mnminclude.'ban.php');
+include(mnminclude.'canon-AEDE.php');
 
 $globals['ads'] = false;
 
@@ -125,6 +126,15 @@ function do_submit1() {
 	global $db, $dblang, $current_user, $globals;
 
 	$url = clean_input_url($_POST['url']);
+
+	// MERDA
+	if (Canon_AEDE::remove_shit($url)) {
+		echo '<p class="error"><strong>'._('Estas enviando unha noticia dun medio AEDE. Como nos queren cobrar por ligalos, non podemos permitilo.').'</strong></p> ';
+		echo '<p class="error"><strong>'._('Podes pesquisar algunha fonte alternativa para o mesmo contido.').'</strong></p> ';
+		echo '</div>'. "\n";
+		return;
+	}
+
 	$url = preg_replace('/^http:\/\/http:\/\//', 'http://', $url); // Some users forget to delete the foo http://
 	if (! preg_match('/^\w{3,6}:\/\//', $url)) { // http:// forgotten, add it
 		$url = 'http://'.$url;
