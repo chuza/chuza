@@ -321,7 +321,7 @@ case 2:
     $sorted_comments = Array($s);
     $comments_by_id[0] = $s;
 
-    sort_comment($sorted_comments,$unsorted_comments,&$comments_by_id);
+    sort_comment($sorted_comments,$unsorted_comments,$comments_by_id);
 
 		echo '<ol class="comments-list">';
 
@@ -342,14 +342,14 @@ case 2:
             if ($comment->id != 0) $comment->print_summary($link, 2500, true);
 
             if (!empty($comments_by_id[$kay]->children)) {
-                traverse_sorted($options, $level,$comments_by_id[$kay]->children,&$comments_by_id);
+                traverse_sorted($options, $level,$comments_by_id[$kay]->children,$comments_by_id);
             }
 
             if ($comment->id != 0) $comment->print_summary_end();
         }
     }
 
-    traverse_sorted($options,-2, $sorted_comments, &$comments_by_id);
+    traverse_sorted($options,-2, $sorted_comments, $comments_by_id);
 
     echo '</ol>';
 	}
