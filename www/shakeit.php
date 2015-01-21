@@ -97,7 +97,7 @@ if($cat) {
 }
 
 
-do_header(_('noticias pendientes') . ' | ' . _('menéame'));
+do_header(_('pendentes') . ' | ' . _('Chuza!'));
 do_tabs("main","shakeit");
 print_shakeit_tabs($tab);
 

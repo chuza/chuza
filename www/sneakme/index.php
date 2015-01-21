@@ -31,7 +31,7 @@ if (!isset($_REQUEST['id']) && !empty($_SERVER['PATH_INFO'])) {
 $min_date = date("Y-m-d H:00:00", time() - 192800); //  about 48 hours
 $page_size = 50;
 $offset=(get_current_page()-1)*$page_size;
-$page_title = _('nótame') . ' | '._('menéame');
+$page_title = _('Chios') . ' | '._('Chuza!');
 $view = false;
 switch ($argv[0]) {
 	case '_best':
