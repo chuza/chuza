@@ -141,13 +141,13 @@ function do_footer_plus_meneame() {
 	if (! $globals['is_meneame']) return;
 	echo '<h5>+chuza</h5>'."\n";
 	echo '<ul id="moremenelist">'."\n";
-	echo '<li><a href="http://m.chuza.gl/">'._('versión móbil').'</a></li>'."\n";
+	echo '<li><a href="http://m.chuza.org/">'._('versión móbil').'</a></li>'."\n";
 	//echo '<li><a href="http://tv.chuza.net/">'._('menéame TV').'</a></li>'."\n";
 	echo '<li><a href="http://twitter.com/chuza">'._('síguenos en twitter').'</a></li>'."\n";
 	//echo '<li><a href="http://meneame.jaiku.com/">'._('síguenos en jaiku').'</a></li>'."\n";
 	echo '<li><a href="/chios/">'._('nótame').'</a></li>'."\n";
-	echo '<li><a href="http://chuza.gl/blog">'._('blog').'</a></li>'."\n";
-	echo '<li><a href="http://chuza.gl/wiki">'._('wiki').'</a></li>'."\n";
+	echo '<li><a href="http://chuza.org/blog">'._('blog').'</a></li>'."\n";
+	echo '<li><a href="http://chuza.org/wiki">'._('wiki').'</a></li>'."\n";
 	echo '<li><a href="http://reduggy.net">'._('reduggy.net').'</a></li>'."\n";
 	echo '</ul>'."\n";
 }
@@ -166,7 +166,7 @@ function do_credits_mobile() {
 	global $dblang, $globals;
 
 	echo '<div id="footthingy">';
-	echo '<a href="http://chuza.gl" title="chuza.gl"><img src="http://chuza.gl/img/mnm/meneito.png" alt="Chuza!"/></a>';
+	echo '<a href="http://chuza.org" title="chuza.org"><img src="http://chuza.org/img/mnm/meneito.png" alt="Chuza!"/></a>';
 	/*
 	echo '<ul id="stdcompliance">';
 	echo '<li><a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:80px;height:15px" src="'.$globals['base_url'].'img/common/valid-xhtml10.gif" alt="Valid XHTML 1.0 Transitional" /></a></li>';

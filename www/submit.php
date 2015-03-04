@@ -25,7 +25,8 @@ if(isset($_POST["phase"])) {
       $user_votes = $db->get_row("SELECT COUNT(vote_id) as n_votes FROM votes WHERE vote_date > DATE_SUB(NOW(), INTERVAL 1 DAY) AND vote_user_id = ".$current_user->user_id);
 
       if ($user_votes->n_votes < 4 && !$globals['development']) {
-        header('Location: http://chuza.gl?uspammer=x');
+        header('Location: http://chuza.org?uspammer=x');
+
         exit;
       }
 

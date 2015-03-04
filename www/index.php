@@ -133,11 +133,11 @@ if ($globals['CUSTOMCSS']) {
 echo "<div class='sidebox'>";
 echo "<div class='header'><h4>"._("Asociaci&oacute;n Cultural Chuza!")."</h4></div>";
 
-echo "<div class='cell' style='border-bottom:1px solid #669933;'><a href='http://chuza.gl/equipa/index.php?page=o-novo-chuza'><h3>Colabora</h3></a></div>";
+echo "<div class='cell' style='border-bottom:1px solid #669933;'><a href='http://chuza.org/equipa/index.php?page=o-novo-chuza'><h3>Colabora</h3></a></div>";
 
-echo "<div class='cell' style='border-bottom:1px solid #669933;'><a href='http://chuza.gl/equipa/index.php?page=afiliate'><h3>Asociate!</h3></a></div>";
+echo "<div class='cell' style='border-bottom:1px solid #669933;'><a href='http://chuza.org/equipa/index.php?page=afiliate'><h3>Asociate!</h3></a></div>";
 
-echo "<div class='cell' style='border-bottom:1px solid #669933;'><a href='http://chuza.gl/equipa/index.php?page=proxectos-da-asociacion'><h3>Proxectos de chuza!</h3></a></div>";
+echo "<div class='cell' style='border-bottom:1px solid #669933;'><a href='http://chuza.org/equipa/index.php?page=proxectos-da-asociacion'><h3>Proxectos de chuza!</h3></a></div>";
 
 echo "</div>";
 
