@@ -1,8 +1,8 @@
 <?php
 
 
-$cabeceira = file_get_contents('http://www.chuza.gl/api/cabeceira.php');
-$pe = file_get_contents('http://www.chuza.gl/api/pe.php');
+$cabeceira = file_get_contents('http://www.chuza.org/api/cabeceira.php');
+$pe = file_get_contents('http://www.chuza.org/api/pe.php');
 
 
 

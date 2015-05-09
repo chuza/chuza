@@ -99,6 +99,10 @@ echo '<div id="sidebar">';
 
 do_cms_content("FRONT", "SIDEBAR");
 
+if ($globals['do_oque']) {
+    do_siblings_sites($globals['do_oque']);
+}
+
 
 do_banner_right();
 do_banner_promotions();
@@ -158,13 +162,37 @@ if ($globals['show_bottom_sidebar_banner']) do_bottom_sidebar_banner();
 do_categories_cloud('published');
 do_vertical_tags('published');
 
-if ($globals['do_reduggy']) {
-    do_siblings_sites();
-}
+function do_siblings_sites($feed) {
+    echo '<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
 
-function do_siblings_sites() {
-    $output .= '<div id="reduggyBox" class="sidebox" style="padding-bottom:0px;" ><div class="header sibling" style="cursor:pointer" ><h4><a href="http://reduggy.net" >'._('REDUGGY.NET').'</a></h4></div><div class="mainsites" ><ul id="reduggyBoxContent" >'."\n";
-    $output .= '</ul>';
+    google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("'.$feed.'");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("oque_feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            console.log(entry);
+            var div = document.createElement("div");
+            div.className = "cell";
+            var anchor = document.createElement("a");
+            anchor.href = entry.link;
+            anchor.appendChild(document.createTextNode(entry.title));
+            div.appendChild(anchor);
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+    </script>';
+
+    $output .= '<div id="reduggyBox" class="sidebox" style="padding-bottom:0px;" ><div class="header sibling" style="cursor:pointer" ><h4><a href="http://oque.gal" >'._('OQUE.GAL').'</a></h4></div><div class="mainsites" id="oque_feed">'."\n";
+    $output .= '<ul id="" ></ul>';
     $output .= '</div>';
     $output .= '</div>';
 
