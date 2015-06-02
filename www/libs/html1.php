@@ -402,6 +402,8 @@ function do_js_includes() {
 		echo '</script>'."\n";
 	}
 
+	echo '<script id="cookiebanner" src="'.$globals['base_static'].'js/cookiebanner.js" type="text/javascript" data-message="Esta web emprega biscoitos seguindo unha diretiva da UE" data-linkmsg="Ler M&aacute;is" ></script>' . "\n";
+
 	echo '<script type="text/javascript">'."\n";
 	echo 'if(top.location != self.location)top.location = self.location;'."\n";
 	echo 'var base_key="'.get_security_key().'";'."\n";
@@ -879,7 +881,7 @@ function do_vertical_tags($what=false) {
 	}
 }
 
-function do_categories_cloud($what=false, $hours = 48) {
+function do_categories_cloud($what=false, $hours = 96) {
 	global $db, $globals, $dblang;
 
 	if ($globals['mobile']) return;
