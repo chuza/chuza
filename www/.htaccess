@@ -25,3 +25,12 @@ RewriteRule ^(.*)$ mobile/$1 [L]
 #RewriteEngine On
 RewriteCond %{HTTP_HOST} ^m.test.chuza.gl$ [NC]
 #RewriteRule ^(.*)$ http://test.chuza.gl/mobile$1 [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^$
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}

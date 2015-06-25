@@ -435,6 +435,10 @@ function get_auth_link() {
 function check_auth_page() {
 	global $globals;
 
+	if ($globals['ssl_server']) {
+		return;
+	}
+
 	if ($_SERVER["SERVER_PORT"] == 443 || $_SERVER['HTTPS'] == 'on') {
 		// If it's not a page that need SSL, redirect to the standard server
 		if (!$globals['secure_page']) {
